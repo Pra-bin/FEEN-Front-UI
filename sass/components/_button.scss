@@ -1,0 +1,131 @@
+$btn-borderRadius: 4px;
+
+%btn-default {
+    @extend %inline-flex;
+    @include align-items(center);
+    @include flush;
+    @include hard--bottom;
+    @include hard--top;
+    @include transition-default;
+    white-space: nowrap;
+    font-family: inherit;
+    cursor: pointer;
+    overflow: visible;
+    text-align: center;
+    user-select: none;
+}
+
+.btn{
+    @extend %btn-default;
+    @include font-w(500);
+
+    // rounded button groups
+    &-rounded-red {
+        @include bg-color($clr-red-v1 !important);
+        color: $clr-white;
+        @include px(18px);
+        @include py(7px);
+        @include border-radius(24px);
+
+        @include breakpoint-down(lg) {
+            @include px(12px);
+            @include py(8px);
+        }
+
+        @include breakpoint-down(md) {
+            @include px(12px);
+            @include py(8px);
+        }
+
+        &:hover {
+            @include bg-color($clr-blue-v1 !important);
+            color: $clr-white !important;
+            @include transition-default;
+        }
+
+    }
+    &-rounded-gray {
+        @include bg-color($clr-gray !important);
+        color: $clr-white;
+        @include px(18px);
+        @include py(7px);
+        @include border-radius(24px);
+
+        @include breakpoint-down(lg) {
+            @include px(12px);
+            @include py(8px);
+        }
+
+        @include breakpoint-down(md) {
+            @include px(12px);
+            @include py(8px);
+        }
+
+        &:hover {
+            @include bg-color($clr-grey !important);
+            color: $clr-white !important;
+            @include transition-default;
+        }
+
+    }
+
+    // normal button group
+    &-white {
+        @include bg-color($clr-white !important);
+        color: $clr-blue-v3;
+        @include px(25px, 25px);
+        @include py(10px, 10px);
+        @include border-radius(0px);
+        @include font-w(600);
+
+        @include breakpoint-down(xl) {
+            @include font-s(16px);
+        }
+
+        @include breakpoint-down(lg) {
+            @include px(12px, 12px);
+            @include py(2px, 2px);
+            @include font-s(16px);
+        }
+
+        @include breakpoint-down(md) {
+            @include px(12px, 12px);
+            @include py(8px, 8px);
+            @include font-s(18px);
+        }
+
+        &:hover {
+            @include bg-color($clr-red-v1 !important);
+            color: $clr-white !important;
+            @include transition-default;
+
+
+        }
+    }
+
+    // outline button group
+    &-outline-transparent {
+        @include border(rgba(15, 117, 136, 0.4) !important, 2px);
+        @include border-radius(6px);
+        @include p(11px, 24px, 11px, 41px);
+
+        span {
+            @include mx(19px, 0);
+            @include py(4px);
+        }
+
+        &:hover {
+            @include bg-color($clr-red-v1 !important);
+            color: $clr-white !important;
+            @include transition-default;
+            @include border($clr-red-v1 !important, 2px);
+
+        }
+        @include breakpoint-down(sm){
+            width: 100%;
+            text-align: center;
+        }
+    }
+  
+}
+

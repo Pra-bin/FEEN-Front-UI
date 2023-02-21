@@ -1,0 +1,180 @@
+html {
+    -webkit-text-size-adjust: 100%;
+    font-size: map-get($font-size, "base");
+}
+
+body {
+    @include font($base-font-family, $base-font-size, $base-font-color, $base-font-weight);
+    letter-spacing: 0.02em;
+}
+
+p {
+    @include font($base-font-family, $base-font-size, $base-font-color, $base-font-weight);
+    letter-spacing: 0.02em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-rendering: optimizeLegibility;
+    @include flush--bottom;
+    letter-spacing: 0.02em;
+}
+
+*+h1,
+*+h2,
+*+h3,
+*+h4,
+*+h5,
+*+h6 {
+    @include m(16px);
+}
+
+h1,
+.h1 {
+    font-size: $h1-font-size;
+}
+
+h2,
+.h2 {
+    font-size: $h2-font-size;
+}
+
+h3,
+.h3 {
+    font-size: $h3-font-size;
+}
+
+h4,
+.h4 {
+    font-size: $h4-font-size;
+}
+
+h5,
+.h5 {
+    font-size: $h5-font-size;
+}
+
+h6,
+.h6 {
+    font-size: $h6-font-size;
+}
+
+%default-text {
+    @include font-w("medium");
+    letter-spacing: 0.02em;
+    color: $text-color;
+    letter-spacing: 0.02em;
+    @include font-s(map-get($font-size, "base"));
+}
+
+.text {
+    @extend %default-text;
+
+    @include breakpoint-down(md) {
+        @include font-s(map-get($font-size, "sm"));
+    }
+
+    @include breakpoint-down(sm) {
+        @include font-s(map-get($font-size, "x-sm"));
+    }
+
+    @include breakpoint-down(xs) {
+        @include font-s(map-get($font-size, "xx-sm"));
+    }
+
+    &-sm {
+        @include font-s(map-get($font-size, "sm"));
+
+        @include breakpoint-down(md) {
+            @include font-s(map-get($font-size, "x-sm"));
+        }
+
+        @include breakpoint-down(sm) {
+            @include font-s(map-get($font-size, "xx-sm"));
+        }
+
+        @include breakpoint-down(xs) {
+            @include font-s(map-get($font-size, "xxx-sm"));
+        }
+    }
+
+    &-x-sm {
+        @include font-s(map-get($font-size, "x-sm"));
+
+        @include breakpoint-down(md) {
+            @include font-s(map-get($font-size, "xx-sm"));
+        }
+
+        @include breakpoint-down(sm) {
+            @include font-s(map-get($font-size, "xxx-sm"));
+        }
+    }
+}
+
+
+
+%default-title {
+    @include font-s(38px);
+    @include font-w(600);
+    color: $clr-blue-v2;
+    text-transform: uppercase !important;
+}
+
+.title {
+    @extend %default-title;
+
+    @include breakpoint-down(lg) {
+        @include font-s(32px);
+    }
+
+    @include breakpoint-down(sm) {
+        @include font-s(28px);
+    }
+
+    @include breakpoint-down(xs) {
+        font-size: 24px;
+    }
+
+    &-md {
+        @extend %default-title;
+        @include font-s(26px);
+
+        @include breakpoint-down(lg) {
+            @include font-s(20px);
+        }
+
+        @include breakpoint-down(sm) {
+            @include font-s(18px);
+        }
+    }
+
+    &-sm {
+        @extend %default-title;
+
+        @include font-s(18px);
+
+        @include breakpoint-down(lg) {
+            @include font-s(16px);
+        }
+
+        @include breakpoint-down(sm) {
+            @include font-s(15px);
+        }
+
+        @include breakpoint-down(xs) {
+            @include font-s(14px);
+        }
+    }
+}
+
+// horizontal line 
+.line{
+    width: 100%;
+    height: 2px;
+    @include bg-color(opacity($clr-black,0.25));
+    @include my(20px);
+}

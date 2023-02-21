@@ -1,0 +1,733 @@
+// ##################### HOME PAGE #####################
+.sc-banner {
+    background-image: linear-gradient(to right, rgba(16, 0, 247, 0.5), rgba(255, 255, 255, 0.1)), url("../../assets/images/_index-page/background-img.png");
+    @include bg-cover;
+    height: 100vh;
+
+    .banner-content-wrapper {
+
+        .sc-banner-title {
+            &>h1 {
+                @include font(inter, 64px, $clr-white, 800, 55%);
+
+                &:last-child {
+                    line-height: 100%;
+                }
+
+                @include breakpoint-down(xl) {
+                    font-size: 50px;
+                }
+
+                @include breakpoint-down(lg) {
+                    font-size: 40px;
+                }
+
+                @include breakpoint-down(md) {
+                    font-size: 35px;
+                }
+
+                @include breakpoint-down(sm) {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        &>p {
+            @include font(inter, 18px, $clr-white, 400, 22px);
+
+            @include breakpoint-down(xl) {
+                font-size: 18px;
+            }
+
+            @include breakpoint-down(md) {
+                font-size: 16px;
+            }
+
+            @include breakpoint-down(sm) {
+                font-size: 14px;
+            }
+        }
+
+    }
+
+    @include breakpoint-down(lg) {
+        height: 50vh;
+    }
+}
+
+//  Electro section 
+.sc-electro-expo {
+    padding-top: 35px;
+
+    .expo-detail {
+        padding-bottom: 57px;
+
+        @include breakpoint-down(sm) {
+            padding-bottom: 30px;
+        }
+    }
+
+    .side-arrow {
+        .icons {
+            a {
+                span {
+                    @include border-r-circle;
+                    @include px(7px);
+                    @include py(4px);
+                    @include border($clr-blue-v1, 4px);
+
+                    & i {
+                        color: $clr-blue-v1;
+                    }
+                }
+
+
+                &:nth-child(1) {
+                    span {
+                        @include border($clr-grey, 4px);
+
+                        i {
+                            color: $clr-grey;
+                        }
+                    }
+                }
+
+                &:hover {
+                    span {
+                        @include transition-default;
+                        @include border($clr-blue-v1, 4px);
+
+                        i {
+                            @include transition-default;
+                            color: $clr-blue-v1;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        span {
+                            @include transition-default;
+                            @include border($clr-onyx, 4px);
+
+                            i {
+                                color: $clr-onyx;
+                                @include transition-default;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+        }
+
+        @include breakpoint-down(lg) {
+            @include my(0, 60px);
+            @include justify-content(center !important);
+        }
+
+        @include breakpoint-down(md) {
+            @include my(0, 40px);
+        }
+
+        @include breakpoint-down(sm) {
+            @include my(0, 10px);
+        }
+
+        @include breakpoint-down(lg) {
+            @include my(0, 30px);
+        }
+    }
+
+    .products-list {
+
+        .slick-list {
+            .slick-slide {
+
+                .color-overlay-red {
+                    background: opacity($clr-red-v1, 0.8);
+                }
+
+                .color-overlay-green {
+                    background: rgba(12, 162, 81, 0.8);
+                }
+
+                @include breakpoint-down(sm) {
+                    @include mx(0px);
+                }
+
+                .color-overlay-blue {
+                    background: rgba(19, 5, 90, 0.8);
+                }
+            }
+        }
+
+    }
+
+    .products {
+        margin-bottom: 20px;
+        position: relative;
+        border-radius: 20px 20px 0px 0px;
+        margin-bottom: 33px;
+        overflow-x: hidden;
+
+        &-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+
+            @include transition(all 300ms ease-in-out);
+        }
+
+        p {
+            position: absolute;
+            top: 45%;
+            left: 0;
+            z-index: 4;
+            opacity: 0;
+            @include transition(all 300ms ease-in-out);
+        }
+
+        .color-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        &:hover {
+            h3 {
+                top: 25%;
+                @include transition(all 300ms ease-in-out);
+            }
+
+            p {
+                opacity: 1;
+                @include transition(all 500ms ease-in-out 0.1s);
+            }
+        }
+    }
+}
+
+
+//  end of Electro section
+
+// about section 
+.sc-about {
+    @include py(38px);
+
+    .sc-about-img {
+        .img-wrapper {
+            @include pos-relative;
+
+            &::before {
+                content: "";
+                @include pos-absolute(-31px, -38px, null, null, -1);
+                @include bg-color(rgba(20, 101, 138, 0.6));
+                @include box(100%);
+
+                @include breakpoint-down(sm) {
+                    display: none !important;
+                }
+            }
+
+            @include breakpoint-down(lg) {
+                @include my(0, 40px);
+            }
+        }
+    }
+
+    .sc-about-text {
+        .sc-wrapper {
+            .sc-about-title {
+                margin-bottom: 28px;
+            }
+        }
+    }
+}
+
+// end of about section 
+
+// reasons section 
+.sc-reasons {
+    &-header {
+        .top-bar {
+            @include my(0, 19px);
+        }
+
+        .nav-tabs {
+            @include border(rgba(0, 0, 0, 0.2), 1px, bottom);
+
+            .nav-item {
+                .nav-link {
+                    @include border(#EC1C25, 3px);
+
+                    &.active {
+                        color: $clr-blue-v1;
+                        display: inline-block;
+                        @include border(#EC1C25 !important, 3px, bottom);
+                    }
+                }
+            }
+
+        }
+    }
+
+    &-content {
+        @include py(40px, 0);
+
+        h3 {
+            @include my(0, 9px);
+        }
+
+        button {
+            @include p(11px !important, 21px, 11px !important, 21px);
+            @include my(54px, 20px);
+
+        }
+
+        .reasons-right-items {
+            .items {
+                &>div {
+
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        .item {
+                            @include bg-color($clr-blue-v1);
+
+                            img {
+                                filter: brightness(20);
+                            }
+
+                            p,
+                            h3 {
+                                color: $clr-white;
+                            }
+
+                            &:hover {
+                                @include bg-none;
+                                @include border($clr-white, 1px);
+                                @include transition(all 500ms ease-in-out);
+
+                                img {
+                                    filter: none;
+                                    @include transition(all 500ms ease-in-out);
+                                }
+
+                                p,
+                                h3 {
+                                    color: $clr-blue-v1 !important;
+                                    @include transition(all 500ms ease-in-out);
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+                .item {
+                    @include border($clr-blue-v1, 1px);
+                    @include border-radius(10px);
+                    @include py(25px);
+                    @include px(20px);
+
+                    .title {
+                        text-align: center;
+
+                        img {
+                            width: 31px;
+                            margin: auto;
+                            filter: brightness(0.5);
+                        }
+
+                        h3 {
+                            @include my(10px, 0);
+                        }
+                    }
+
+                    &:hover {
+                        @include bg-color($clr-red-v1);
+                        @include transition(all 500ms ease-in-out);
+                        @include border($clr-red-v1);
+
+                        .title {
+                            img {
+                                filter:brightness(1);
+                            }
+
+                            h3 {
+                                @include transition(all 500ms ease-in-out);
+                                color: $clr-white !important;
+                            }
+                        }
+
+                        .content {
+                            p {
+                                @include transition(all 500ms ease-in-out);
+                                color: $clr-white !important;
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+    }
+
+    .sc-resons-ch {
+        @include py(46px, 29px);
+        @include border($clr-gainsboro, 1px, bottom);
+
+        .items {
+            @include px(0, 26px);
+
+            .item {
+                @include py(40px);
+                @include px(12px);
+                @include border-radius(11px);
+                @include bg-color(rgba(0, 0, 0, 0.08));
+                min-height: 180px;
+
+                img {
+                    width: 40px;
+                    @include push--auto;
+                    filter: grayscale(1);
+                }
+
+                h3 {
+                    @include font-s(16px);
+                }
+
+                &:hover {
+                    @include bg-color($clr-blue-v4);
+                    @include transition(all .5s ease-in-out);
+
+                    img {
+                        filter: brightness(0) invert(1);
+                        @include transition(all .5s ease-in-out);
+                    }
+
+                    h3 {
+                        color: $clr-white !important;
+                        @include transition(all .5s ease-in-out);
+                    }
+                }
+            }
+
+            @include breakpoint-down(xl) {
+                @include px(0, 15px);
+            }
+
+        }
+
+        .img-wrap {
+            img {
+                @include border-radius(10px);
+            }
+
+            &.slick-dotted.slick-slider {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        .img-box {
+            @include my(20px, 0);
+        }
+    }
+}
+
+// end of reasons section 
+
+// news section 
+.sc-news {
+    @include py(0, 45px);
+
+    .sc-news-wrap {
+        .col-wrap {
+            position: relative;
+            @include border-radius(8px);
+            @include my(0, 25px);
+            overflow: hidden;
+
+            .content {
+                @include pos-absolute(null, null, 0, 0);
+                @include py(6px);
+                @include bg-color(rgba(0, 0, 0, 0.43));
+                transform: translateY(100%);
+                @include transition-default;
+            }
+
+            &:hover {
+                .content {
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}
+
+
+// ##################### ABOUT PAGE && VISITORS PAGE #####################
+.sc-about-wrap,
+.sc-visitors {
+    padding-top: 95px;
+
+    .img-wrap {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 5%;
+            bottom: 5%;
+            z-index: -1;
+            @include border-radius(15px);
+            background-color: opacity($clr-blue-v1, 0.6);
+
+            @include breakpoint-down(sm) {
+                display: none !important;
+            }
+        }
+    }
+
+    @include breakpoint-down(sm) {
+        padding-top: 0;
+    }
+}
+
+.sc-visitors {
+    .exhibitor-link-list {
+        @include my(56px);
+
+        ul {
+            li {
+                @include pos-relative;
+
+                &::before {
+                    content: "";
+                    @include pos-absolute;
+                    @include bg-color($clr-blue-v1);
+                    left: -18px;
+                    top: 10px;
+                    @include box(10px);
+                    border-radius: 100%;
+
+                    @include breakpoint-down(lg) {
+                        @include box(9px);
+
+                    }
+
+                    @include breakpoint-down(md) {
+                        @include box(8px);
+
+                    }
+
+                    @include breakpoint-down(sm) {
+                        @include box(6px);
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+// ##################### ABOUT ORGANIZERS PAGE #####################
+.sc-about-oraganizer {
+    padding-top: 160px;
+
+    @include breakpoint-down(lg) {
+        padding-top: 60px;
+
+    }
+
+    .headline {
+        .company-wrap-title {
+            text-transform: capitalize !important;
+            position: relative;
+
+            &::before {
+                content: "";
+                top: 50%;
+                left: 0;
+                width: calc(50% - 170px);
+                height: 2px;
+                background-color: $clr-grey;
+                opacity: 0.3;
+                position: absolute;
+            }
+
+            &::after {
+                content: "";
+                top: 50%;
+                right: 0;
+                width: calc(50% - 170px);
+                height: 2px;
+                background-color: $clr-grey;
+                opacity: 0.3;
+                position: absolute;
+            }
+        }
+    }
+
+    .company-list {
+        @include bg-color(opacity($clr-blue-snapphire, 0.25));
+        @include py(77px);
+        @include px(42px);
+        @include border-radius(80px);
+
+        .company-detail {
+            .logo-wrap {
+                img {
+                    @include border-radius(80px);
+                }
+            }
+        }
+
+    }
+
+    .company-detail-wrap {
+        h2 {
+            text-transform: capitalize !important;
+        }
+    }
+}
+
+// ##################### VISITORS PROFILE PAGE #####################
+.sc-profile {
+    @include bg-color(opacity($clr-blue-snapphire, 0.25));
+
+    .sc-profile-wrap {
+
+        .col-content {
+            @include bg-color($clr-white);
+            @include py(40px);
+            @include px(50px);
+            @include border-radius(20px);
+            @include transition-default;
+
+
+            .col-content-wrap {
+                height: 130px;
+
+                img {
+                    width: 50px;
+                    @include mx(auto);
+                    filter: brightness(50%);
+                    @include transition-default;
+
+                }
+            }
+
+            &:hover {
+                @include transition-default;
+                @include bg-color($clr-red-v1);
+
+                img {
+                    filter: brightness(100%);
+                    @include transition-default;
+
+                }
+                h2{
+                    color: $clr-white !important; 
+                }
+
+                h2 {
+                    color: $clr-white;
+                    @include transition-default;
+
+                }
+            }
+        }
+    }
+}
+
+// ##################### EXHIBITORS REGISTRAION PAGE #####################
+
+.sc-ex-registration {
+    @include py(55px);
+    @include bg-color(opacity($clr-blue-v1, 0.25));
+
+    .form-wrap {
+        @include breakpoint-down(lg) {
+            width: 100% !important;
+        }
+
+        .form-group {
+            .form-control {
+                @include border-radius(20px);
+            }
+
+        }
+    }
+}
+
+// ##################### CONTACT PAGE #####################
+
+.sc-contact {
+    .col-content-wrap {
+        @include bg-color(opacity($clr-blue-v1, 0.25));
+        @include border-radius(20px);
+
+        .form-control {
+            @include bg-color(opacity($clr-blue-snapphire, 0.8));
+        }
+
+        ::placeholder {
+            color: $clr-white;
+        }
+
+        button {
+            @include breakpoint-down(sm) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// ##################### NEWS PAGE #####################
+.news {
+    .news-wrap {
+        .img-wrap {
+            @include pos-relative;
+
+            .content {
+                @include pos-absolute;
+                @include box(100%, 10%);
+                bottom: 0;
+                @include bg-color(opacity(black, 0.4));
+                opacity: 0;
+                @include transition-default;
+
+            }
+
+            &:hover {
+                .content {
+                    @include transition-default;
+                    opacity: 1;
+                }
+            }
+
+        }
+
+        .txt-detail {
+            .para-wrap {
+                p {
+                    &:nth-child(1) {
+                        &::first-letter {
+                            color: $clr-black;
+                            font-size: 38px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

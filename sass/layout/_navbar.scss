@@ -1,0 +1,73 @@
+    .navbar.index-nav {
+        .navbar-nav {
+            text-align: center;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+            width: 30px;
+        }
+
+        .navbar-brand {
+            @include breakpoint-down(xl) {
+                flex: 0 0 120px;
+            }
+        }
+
+        .nav-item {
+            margin-left: 50px;
+            @include breakpoint-down(xl) {
+                margin-left: 20px;
+            }
+
+            .nav-link {
+                color: $clr-white;
+                @include hard;
+                @include flush;
+            }
+
+            @include breakpoint-down(lg) {
+                padding: 10px 0;
+            }
+        }
+    }
+
+    // about page nav bar 
+    .navbar {
+        .navbar-nav {
+            text-align: center;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .nav-item {
+            .nav-link {
+                color: $clr-red-v1;
+            }
+        }
+
+    }
+
+    .dropdown-menu{
+        @include hard--ends;
+        @include border-r-none;
+
+        .dropdown-item{
+            @include py(6px);
+            @include border($clr-white, 1px);
+            text-align: center;
+
+            &:hover{
+                @include border($clr-blue-v1, 1px, bottom);
+                @include bg-color($clr-white);
+            }
+        }
+    }
+
+    

@@ -1,0 +1,60 @@
+.sc-footer {
+    .footer-content-wrap {
+        @include py(24px);
+        .logo {
+            img {
+                @include py(0, 39px);
+            }
+
+            .icons {
+                span {
+                    @include mx(9px);
+                }
+            }
+        }
+
+        .footer-nav {
+            ul {
+                .footer-nav-item {
+                    @include my(6px);
+                    @include px(10px);
+                    @include border(opacity($clr-white, 0.3), 1px, right);
+
+                    &:last-child{
+                        @include border-none;
+                    }
+
+                    @include breakpoint-up(lg){
+                        @include border-none;
+                    }
+
+                    &:hover {
+                        @include transition-default;
+                        .footer-nav-link {
+                            @include opacity(0.8);
+                        }
+
+                    }
+                }
+
+                @include breakpoint-up(lg){
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+
+            @include breakpoint-down(sm) {
+                @include my(25px);
+            }
+        }
+    }
+
+    .cr-txt {
+        @include py(10px);
+        @include border(black(0.1), 1px, top);
+    }
+
+    @include breakpoint-down(sm) {
+        @include flex-direction(column);
+
+    }
+}

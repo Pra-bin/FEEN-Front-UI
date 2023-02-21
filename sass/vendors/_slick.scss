@@ -1,0 +1,57 @@
+.slick-dots {
+    bottom: 32px !important;
+
+    button {
+        &::before {
+            @include font-s(12px !important);
+            color: $clr-white !important;
+            opacity: 1 !important;
+        }
+    }
+
+    .slick-active {
+        button {
+            &::before {
+                // @include font-s(16px!important);
+                transform: scale(1.5);
+            }
+        }
+    }
+}
+
+.home-slider {
+    .slick-next {
+        right: -15px;
+        @include breakpoint-down(sm) {
+            right: 30px;
+        }
+    }
+
+    .slick-next:before {
+        font-size: 20px;
+        font-family: "Font Awesome 5 free";
+        font-weight: 900;
+        content: "\f054";
+        @include bg-color(opacity($clr-blue-v1, 0.5));
+        border-radius: 100%;
+        padding: 4px 7px;
+    }
+
+    .slick-prev {
+        @include breakpoint-down(sm) {
+            left: 16px;
+            z-index: 99;
+
+        }
+    }
+
+    .slick-prev:before {
+        font-size: 20px;
+        font-family: "Font Awesome 5 free";
+        font-weight: 900;
+        content: "\f053";
+        @include bg-color(opacity($clr-blue-v1, 0.5));
+        border-radius: 100%;
+        padding: 4px 7px;
+    }
+}

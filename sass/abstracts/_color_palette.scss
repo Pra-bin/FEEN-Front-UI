@@ -1,0 +1,30 @@
+/* GLOBAL COLOR PALETTE */
+/* ==== Generic colors ==== */
+$clr-white:#FFFFFF;
+$clr-black:#000000;
+$clr-red-pigment:#B33951;
+$clr-charcoal: #333C4A;
+$clr-charcoal-v2:#3F4748;
+$clr-teal-blue:#0F7588;
+$clr-indigo-dye:#0F4B66;
+$clr-blue-snapphire:#14658A;
+$clr-midnight-blue:#12055D;
+$clr-davys-grey:#484B4D;  
+$clr-granite-gray:#646464;
+$clr-gainsboro:#E1E1E1;
+$clr-onyx:#3B3D3F;
+
+/* ==== Color Scheme ==== */
+
+$clr-red-v1:$clr-red-pigment;
+$clr-secondary: $clr-charcoal;
+$clr-blue-v1: $clr-teal-blue;
+$clr-blue-v2: $clr-blue-snapphire;
+$clr-blue-v3: $clr-midnight-blue;
+$clr-grey: $clr-davys-grey;
+$clr-blue-v4: $clr-indigo-dye;
+$clr-gray:$clr-granite-gray;
+
+
+// common colors
+$text-color: $clr-teal-blue;
